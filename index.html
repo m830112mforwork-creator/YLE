@@ -3,42 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>耶加 I.E.E. 國際英檢班 | 專業預約推薦制</title>
+    <title>耶加 I.E.E. 國際英檢班 | 專屬級數實力對接</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --brand-primary: #0369a1;
+            --brand-secondary: #f59e0b;
+        }
         body {
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #fcfcfb;
             color: #1c1917;
             scroll-behavior: smooth;
         }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+
+        /* 特殊漸層背景 */
         .hero-gradient {
             background: radial-gradient(circle at top right, #e0f2fe 0%, #fcfcfb 40%);
         }
+
+        /* 課程卡片優化 */
+        .curriculum-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(231, 229, 228, 0.5);
+        }
+        .curriculum-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 導航欄毛玻璃 */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
-        .step-card {
-            transition: all 0.3s ease;
-            border: 1px solid #f5f5f4;
+
+        .chart-container {
+            position: relative;
+            height: 320px;
+            width: 100%;
         }
-        .step-card:hover {
-            border-color: #0ea5e9;
-            background: #f0f9ff;
+
+        .status-badge {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
         }
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
 </head>
 <body class="hero-gradient">
@@ -50,86 +76,154 @@
                     <div class="w-10 h-10 bg-sky-700 rounded-lg flex items-center justify-center shadow-lg">
                         <span class="text-white font-bold text-xl">Y</span>
                     </div>
-                    <span class="text-xl font-bold text-stone-800 tracking-tighter">耶加 <span class="font-[Montserrat] text-sky-700">I.E.E.</span></span>
+                    <span class="text-xl font-bold text-stone-800 tracking-tighter">耶加 <span class="text-sky-700 font-montserrat">I.E.E.</span></span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-stone-500 uppercase tracking-widest">
+                    <a href="#philosophy" class="hover:text-sky-700 transition">教育哲學</a>
                     <a href="#curriculum" class="hover:text-sky-700 transition">課程方案</a>
-                    <a href="#steps" class="hover:text-sky-700 transition">推薦流程</a>
-                    <a href="#register" class="bg-sky-700 text-white px-6 py-2.5 rounded-full hover:bg-sky-800 transition shadow-md">立即預約</a>
+                    <a href="#roadmap" class="hover:text-sky-700 transition">級數對接</a>
+                    <a href="#register" class="bg-sky-700 text-white px-6 py-2.5 rounded-full hover:bg-sky-800 transition shadow-md hover:shadow-sky-200">立即預約</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="pt-48 pb-24 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-amber-100 text-amber-800 px-4 py-1 rounded-full text-xs font-bold tracking-widest mb-6 inline-block uppercase">Academic Excellence</span>
-            <h1 class="text-4xl md:text-6xl font-bold text-stone-900 mb-8 leading-tight">
-                全面採行<span class="text-sky-700">【預約推薦制】</span><br>
-                看見孩子的真實落點
+    <section class="pt-40 pb-24 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="status-badge mb-6 inline-block animate-bounce">2026 國際標準同步更新</span>
+            <h1 class="text-4xl md:text-6xl font-bold text-stone-900 mb-8 leading-[1.15]">
+                實力是內功，證照是招式<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-700 to-sky-500">讓英語能力精準視覺化</span>
             </h1>
-            <p class="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
-                我們深信，每位孩子都有其獨特的學習節奏。透過專業診斷，我們不只給孩子證照，更給孩子「最適合的位置」。
+            <p class="text-lg md:text-xl text-stone-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+                我們不只是為了英檢而教，而是讓孩子的實力達到級數後，<br class="hidden md:block">
+                自然、優雅地拿下劍橋國際金牌證照。
             </p>
-        </div>
-    </section>
-
-    <section id="steps" class="py-24 bg-white border-y border-stone-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-stone-900 mb-4">【流程三步驟：專業引導路徑】</h2>
-                <div class="h-1 w-20 bg-sky-600 mx-auto"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-                <div class="step-card bg-stone-50 p-10 rounded-[2.5rem] relative">
-                    <div class="text-sky-700 text-5xl font-bold font-[Montserrat] mb-6 opacity-20">01</div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-4">專業診斷</h3>
-                    <p class="text-stone-600 leading-relaxed">
-                        耶加 I.E.E. 教學團隊將於英語班級進行<span class="text-sky-700 font-bold">『YLE 實力分流診斷卷』</span>統一施測，精準量化聽、說、讀、寫各項維度。
-                    </p>
-                </div>
-
-                <div class="step-card bg-stone-50 p-10 rounded-[2.5rem] relative">
-                    <div class="text-sky-700 text-5xl font-bold font-[Montserrat] mb-6 opacity-20">02</div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-4">個殊推薦</h3>
-                    <p class="text-stone-600 leading-relaxed">
-                        英語老師將依據診斷結果，並結合孩子平時在 <span class="text-stone-900 font-bold">I.E.E. 系統的學習紀錄</span>進行交叉評估，考量學習態度與長期發展。
-                    </p>
-                </div>
-
-                <div class="step-card bg-stone-50 p-10 rounded-[2.5rem] relative">
-                    <div class="text-sky-700 text-5xl font-bold font-[Montserrat] mb-6 opacity-20">03</div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-4">班級安排</h3>
-                    <p class="text-stone-600 leading-relaxed">
-                        由英語老師<span class="text-amber-600 font-bold">親自建議</span>最適合孩子當前實力的級數與班別，確保學習能量精準發揮，達成學習成效最大化。
-                    </p>
-                </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-5">
+                <a href="#curriculum" class="px-8 py-4 bg-stone-900 text-white rounded-2xl hover:bg-stone-800 font-bold transition-all shadow-xl shadow-stone-200">探索課程方案</a>
+                <a href="#data" class="px-8 py-4 bg-white border border-stone-200 text-stone-600 rounded-2xl hover:bg-stone-50 font-bold transition-all">數據實證領先</a>
             </div>
         </div>
     </section>
 
-    <section id="curriculum" class="py-24">
+    <section id="curriculum" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-stone-900">耶加 I.E.E. 課程一覽</h2>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-sky-700 font-bold tracking-widest uppercase text-sm mb-3">Professional Track</h2>
+                    <p class="text-4xl font-bold text-stone-900">耶加 I.E.E. 課程一覽表</p>
+                </div>
+                <p class="text-stone-500 max-w-md">針對不同成長階段，提供精準的實力培訓路徑，確保學習成效與國際檢定完美銜接。</p>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="bg-white border border-stone-100 p-10 rounded-[3rem] shadow-xl shadow-stone-100">
-                    <span class="text-sky-700 font-bold text-sm tracking-widest uppercase">Fundamental</span>
-                    <h3 class="text-2xl font-bold mt-2 mb-6 text-stone-900">I.E.E. 英檢實力班 (A/P/L)</h3>
-                    <ul class="space-y-4 text-stone-600">
-                        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> 對標 YLE 劍橋兒童英檢</li>
-                        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-sky-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> 奠定自然發音與直覺聽力</li>
-                    </ul>
+                <div class="curriculum-card bg-stone-50 rounded-3xl p-8 md:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8">
+                        <span class="text-6xl font-bold text-stone-100 font-montserrat select-none">01</span>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-sky-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-2">I.E.E. 英檢實力班</h3>
+                        <p class="text-sky-700 font-bold mb-6">對應級數：A / P / L 級</p>
+                        
+                        <div class="space-y-4 border-t border-stone-200 pt-6">
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></div>
+                                <p class="text-stone-600"><span class="font-bold text-stone-800">檢定對標：</span>YLE 兒童英檢 (Starters / Movers / Flyers)</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></div>
+                                <p class="text-stone-600"><span class="font-bold text-stone-800">核心指標：</span>累積 600-1000+ 詞彙，具備國中基礎語法及敘事能力。</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0"></div>
+                                <p class="text-stone-600"><span class="font-bold text-stone-800">教學重點：</span>建立自然發音反射、應試心理韌性與基本英語邏輯。</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-stone-900 p-10 rounded-[3rem] shadow-2xl text-white">
-                    <span class="text-amber-500 font-bold text-sm tracking-widest uppercase">Advanced</span>
-                    <h3 class="text-2xl font-bold mt-2 mb-6">I.E.E. 英檢衝刺班 (U/S/J)</h3>
-                    <ul class="space-y-4 text-stone-400">
-                        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> 對標 KET / PET 通用英檢</li>
-                        <li class="flex items-center gap-3"><svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg> 強化思辨力與學術寫作架構</li>
-                    </ul>
+
+                <div class="curriculum-card bg-stone-900 rounded-3xl p-8 md:p-10 relative overflow-hidden shadow-2xl shadow-stone-300">
+                    <div class="absolute top-0 right-0 p-8">
+                        <span class="text-6xl font-bold text-stone-800 font-montserrat select-none">02</span>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">I.E.E. 英檢衝刺班</h3>
+                        <p class="text-amber-500 font-bold mb-6">對應級數：U / S / J 級</p>
+                        
+                        <div class="space-y-4 border-t border-stone-700 pt-6">
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></div>
+                                <p class="text-stone-300"><span class="font-bold text-white">檢定對標：</span>KET (A2) / PET (B1) 通用英檢</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></div>
+                                <p class="text-stone-300"><span class="font-bold text-white">核心指標：</span>具備成人中級實力，跨領域閱讀與學術英語接軌。</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></div>
+                                <p class="text-stone-300"><span class="font-bold text-white">教學重點：</span>培養英語思辨力與領袖視野，對標私中與國際學校競爭力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="py-24 bg-stone-50">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-stone-900 mb-12">精準級數對接地圖</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                <button onclick="setRoadmap(0)" class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-sky-500 transition-all text-left group">
+                    <p class="text-xs font-bold text-stone-400 mb-2 uppercase">Level 1</p>
+                    <h4 class="font-bold text-lg text-stone-800 group-hover:text-sky-700">A / P 級</h4>
+                </button>
+                <button onclick="setRoadmap(1)" class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-sky-500 transition-all text-left group">
+                    <p class="text-xs font-bold text-stone-400 mb-2 uppercase">Level 2</p>
+                    <h4 class="font-bold text-lg text-stone-800 group-hover:text-sky-700">L 級</h4>
+                </button>
+                <button onclick="setRoadmap(2)" class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-sky-500 transition-all text-left group">
+                    <p class="text-xs font-bold text-stone-400 mb-2 uppercase">Level 3</p>
+                    <h4 class="font-bold text-lg text-stone-800 group-hover:text-sky-700">U / S 級</h4>
+                </button>
+                <button onclick="setRoadmap(3)" class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-sky-500 transition-all text-left group">
+                    <p class="text-xs font-bold text-stone-400 mb-2 uppercase">Level 4</p>
+                    <h4 class="font-bold text-lg text-stone-800 group-hover:text-sky-700">J 級</h4>
+                </button>
+            </div>
+            <div id="roadmap-content" class="bg-white rounded-3xl p-10 shadow-xl shadow-stone-100 min-h-[200px] animate-fade-in text-left border border-stone-100">
+                </div>
+        </div>
+    </section>
+
+    <section id="data" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-stone-900 mb-16 text-center">為什麼選擇耶加？<br><span class="text-stone-400 text-xl font-medium">數據化的領先實力</span></h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-stone-50 p-8 rounded-3xl">
+                    <h3 class="font-bold text-stone-800 mb-8 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-sky-700 rounded-full"></span>
+                        詞彙量深度對稱
+                    </h3>
+                    <div class="chart-container"><canvas id="vocabChart"></canvas></div>
+                </div>
+                <div class="bg-stone-50 p-8 rounded-3xl">
+                    <h3 class="font-bold text-stone-800 mb-8 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-amber-500 rounded-full"></span>
+                        五大核心能力指標
+                    </h3>
+                    <div class="chart-container"><canvas id="radarChart"></canvas></div>
+                    <div class="mt-6 flex flex-wrap gap-2 justify-center">
+                        <button onclick="updateRadar('yle')" class="px-4 py-1.5 bg-white rounded-full text-xs font-bold shadow-sm hover:bg-sky-700 hover:text-white transition">YLE 階段</button>
+                        <button onclick="updateRadar('ket')" class="px-4 py-1.5 bg-white rounded-full text-xs font-bold shadow-sm hover:bg-sky-700 hover:text-white transition">KET 階段</button>
+                        <button onclick="updateRadar('pet')" class="px-4 py-1.5 bg-white rounded-full text-xs font-bold shadow-sm hover:bg-sky-700 hover:text-white transition">PET 階段</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,23 +231,103 @@
 
     <section id="register" class="py-24">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="bg-sky-900 rounded-[3rem] p-16 text-white relative overflow-hidden shadow-2xl">
+            <div class="bg-gradient-to-br from-sky-800 to-sky-950 rounded-[3rem] p-12 md:p-20 text-white shadow-2xl relative overflow-hidden">
                 <div class="relative z-10">
-                    <h2 class="text-3xl font-bold mb-6">立即預約專業診斷</h2>
-                    <p class="text-sky-200 mb-10">點擊下方按鈕填寫意願表，我們將安排專人聯繫診斷細節。</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrFtTsCCLtOcMoMbIi73Up2GDStRrfiJbTcgjohjidUnO2TA/viewform" target="_blank" class="inline-block px-12 py-5 bg-amber-500 text-stone-900 font-black text-lg rounded-2xl hover:bg-amber-400 transition-all transform hover:scale-105">
-                        填寫預約報名表單
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">開啟孩子的國際化視野</h2>
+                    <p class="text-sky-200 mb-10 text-lg">採取預約推薦制，確保孩子進入最適合的學習環境。</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrFtTsCCLtOcMoMbIi73Up2GDStRrfiJbTcgjohjidUnO2TA/viewform" target="_blank" class="inline-block px-12 py-5 bg-amber-500 text-stone-900 font-black text-lg rounded-2xl hover:bg-amber-400 transition transform hover:scale-105 shadow-xl shadow-sky-900/50">
+                        立即填寫報名意願表
                     </a>
                 </div>
-                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-sky-800 rounded-full opacity-50 blur-3xl"></div>
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-sky-700 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-stone-400 text-sm">
+    <footer class="py-12 text-center text-stone-400 text-sm border-t border-stone-100">
         <p class="font-bold text-stone-600 mb-2">耶加 I.E.E. 國際英檢專班</p>
         <p>© 2026 YEJIA Education. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Roadmap Content
+        const roadmapSteps = [
+            { title: "A / P 級：對接 YLE Starters / Movers", tag: "語言直覺奠定期", value: "專注於「聽」與「讀」的直覺反應。我們不教死背單字，而是透過自然發音讓孩子看到單字就能讀、聽到就能拼，達成劍橋兒童英檢滿盾佳績。" },
+            { title: "L 級：對接 YLE Flyers", tag: "邏輯敘事轉換期", value: "這是國小英語的分水嶺。孩子開始學習複雜時態，並能流暢描述過去發生的事件。Flyers 滿盾象徵孩子具備挑戰國中資優班的英語底蘊。" },
+            { title: "U / S 級：對接 KET (A2 Key)", tag: "學術社交跨越期", value: "脫離兒童英語，進入成人英語邏輯。側重於社交場合的精準表達與學術短文閱讀，是私中入學考與國際部銜接的核心階段。" },
+            { title: "J 級：對接 PET (B1 Preliminary)", tag: "精英思辨攻頂期", value: "對標全民英檢中級實力。孩子能針對特定議題發表看法，具備批判性思考與深度閱讀能力，為未來國際人才佈局。" }
+        ];
+
+        function setRoadmap(i) {
+            const data = roadmapSteps[i];
+            document.getElementById('roadmap-content').innerHTML = `
+                <div class="flex flex-col md:flex-row gap-8 items-start animate-fade-in">
+                    <div class="w-full md:w-1/3">
+                        <span class="px-3 py-1 bg-sky-100 text-sky-700 text-xs font-bold rounded-md uppercase mb-4 inline-block">${data.tag}</span>
+                        <h3 class="text-3xl font-bold text-stone-900">${data.title}</h3>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <p class="text-lg text-stone-600 leading-relaxed">${data.value}</p>
+                    </div>
+                </div>
+            `;
+        }
+        setRoadmap(0);
+
+        // Chart.js Setup
+        window.onload = function() {
+            // Vocab Bar Chart
+            new Chart(document.getElementById('vocabChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['YLE 標準', '耶加 A-P', 'KET 標準', '耶加 U-S'],
+                    datasets: [{
+                        data: [400, 950, 1500, 2200],
+                        backgroundColor: ['#e7e5e4', '#0369a1', '#e7e5e4', '#f59e0b'],
+                        borderRadius: 12,
+                        barThickness: 40
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: { y: { beginAtZero: true, grid: { display: false } }, x: { grid: { display: false } } }
+                }
+            });
+
+            // Radar Chart
+            window.radar = new Chart(document.getElementById('radarChart'), {
+                type: 'radar',
+                data: {
+                    labels: ['聽力對接', '口說勇氣', '閱讀邏輯', '寫作架構', '應試心理'],
+                    datasets: [{
+                        label: '能力覆蓋',
+                        data: [90, 95, 80, 70, 85],
+                        backgroundColor: 'rgba(3, 105, 161, 0.1)',
+                        borderColor: '#0369a1',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#0369a1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { r: { angleLines: { display: true }, suggestMin: 50, suggestMax: 100 } },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        };
+
+        function updateRadar(s) {
+            const data = {
+                'yle': [90, 95, 80, 70, 85],
+                'ket': [80, 85, 90, 85, 80],
+                'pet': [75, 80, 95, 90, 90]
+            };
+            window.radar.data.datasets[0].data = data[s];
+            window.radar.update();
+        }
+    </script>
 </body>
 </html>
