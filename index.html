@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>耶加 I.E.E. 國際英檢班 | 課程一覽與級數對接導覽</title>
+    <meta name="description" content="別的孩子是為了考試才背單字，耶加的孩子是因為實力到了，所以順手拿下國際金牌證照！精準對接 YLE / KET / PET。">
+    <meta property="og:title" content="耶加 I.E.E. 國際英檢班 | 課程導覽">
+    <meta property="og:description" content="讓英語實力變成「看得見」的國際證照，耶加級數與劍橋檢定的完美配合。">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,16 +19,14 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: #fafaf9;
             color: #292524;
+            scroll-behavior: smooth;
         }
         
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
             height: 300px;
-            max-height: 400px;
+            margin: 0 auto;
         }
 
         .card-hover {
@@ -30,7 +34,7 @@
         }
         .card-hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         @keyframes fadeIn {
@@ -64,51 +68,31 @@
             box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.3);
         }
 
-        /* 表格響應式優化 */
         .table-container {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
     </style>
-
-    <!-- Application Structure Plan: 
-         1. Hero Section: Branding update for I.E.E. with "Visible Strength".
-         2. Philosophy Simulator: Internal Power (A-J) vs Exam License metaphor.
-         3. Curriculum Overview (NEW): Replaced AI with a structured comparison table of classes.
-         4. Interactive Roadmap: Stage-based exploration of levels docked to YLE/KET/PET.
-         5. Data Dashboard: Vocabulary & Radar charts comparing against global standards.
-         6. Placement Wizard & Enrollment: Logical flow leading to the Google Form.
-    -->
-
-    <!-- Visualization & Content Choices:
-         1. Curriculum Table: Structured HTML/Tailwind -> Goal: Clear comparison of programs -> Ensures transparency.
-         2. Roadmap: Tab-based level details -> Goal: Precise level docking.
-         3. Data: Chart.js -> Quantitative evidence of the "Yejia Advantage".
-    -->
-    
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-xl md:text-2xl font-bold text-sky-700 tracking-wide">耶加 I.E.E. 國際英檢班</span>
+                    <span class="text-xl md:text-2xl font-bold text-sky-700 tracking-wide">耶加 I.E.E.</span>
                 </div>
-                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium text-stone-600">
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-stone-600">
                     <a href="#philosophy" class="hover:text-sky-600 transition">教育哲學</a>
-                    <a href="#curriculum" class="hover:text-sky-600 transition">課程一覽表</a>
+                    <a href="#curriculum" class="hover:text-sky-600 transition">課程一覽</a>
                     <a href="#roadmap" class="hover:text-sky-600 transition">級數對接</a>
                     <a href="#data" class="hover:text-sky-600 transition">數據實證</a>
-                    <a href="#register" class="bg-sky-600 text-white px-4 py-2 rounded-full hover:bg-sky-700 transition shadow-md">立即報名</a>
+                    <a href="#register" class="bg-sky-600 text-white px-4 py-2 rounded-full hover:bg-sky-700 transition">立即報名</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="bg-stone-100 py-12 md:py-20 border-b border-stone-200">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h1 class="text-3xl md:text-5xl font-bold text-stone-800 mb-6 leading-tight">
@@ -118,17 +102,12 @@
                 別的孩子是為了考試才背單字，耶加的孩子是因為<strong>「級數實力到了」</strong>，所以順手拿下國際金牌證照！
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button onclick="document.getElementById('curriculum').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 font-medium transition shadow-lg">
-                    查看課程一覽表
-                </button>
-                <button onclick="document.getElementById('roadmap').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-white border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-50 font-medium transition">
-                    了解級數對接
-                </button>
+                <a href="#curriculum" class="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 font-medium transition text-center shadow-lg">查看課程一覽表</a>
+                <a href="#roadmap" class="px-6 py-3 bg-white border border-stone-300 rounded-lg text-stone-600 hover:bg-stone-50 font-medium transition text-center">了解級數對接</a>
             </div>
         </div>
     </header>
 
-    <!-- Section 1: Philosophy -->
     <section id="philosophy" class="py-16 bg-white">
         <div class="max-w-5xl mx-auto px-6">
             <div class="mb-10 text-center">
@@ -137,145 +116,89 @@
                     <button id="btn-internal" class="flex-1 py-2 rounded-xl text-sm font-bold transition-all duration-300" onclick="updatePhilosophy('internal')">耶加級數 (內功)</button>
                     <button id="btn-external" class="flex-1 py-2 rounded-xl text-sm font-bold transition-all duration-300" onclick="updatePhilosophy('external')">國際檢定 (招式)</button>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 items-center mt-12">
+                <div class="grid md:grid-cols-2 gap-8 items-center mt-12 text-left">
                     <div class="text-center md:text-right">
-                        <div id="philo-icon" class="text-6xl mb-4 transition-transform duration-500">🏎️</div>
-                        <h3 id="philo-title" class="text-2xl font-bold text-sky-700 mb-4">掌握實力 = 駕輕就熟</h3>
-                        <p id="philo-desc" class="text-stone-600 text-lg leading-relaxed">...</p>
+                        <div id="philo-icon" class="text-6xl mb-4 transition-transform duration-500">🧠</div>
+                        <h3 id="philo-title" class="text-2xl font-bold text-sky-700 mb-4">級數內功 = 實力深耕</h3>
+                        <p id="philo-desc" class="text-stone-600 text-lg leading-relaxed">耶加 A-J 級數不僅僅是級數，而是涵蓋了文法、口說、閱讀等全方位的『語言實力』。</p>
                     </div>
                     <div class="bg-stone-800 text-white p-8 rounded-2xl shadow-xl">
-                        <p class="text-xl font-light italic">"耶加 I.E.E. 級數體系深耕核心內功，實力早已超越檢定框架。我們教給孩子的是一輩子帶不走的語言能力，而國際證照則是技術純熟後順手拿下的<strong class="text-amber-400">『金牌駕照』</strong>。"</p>
+                        <p class="text-xl font-light italic">"耶加 I.E.E. 級數體系深耕核心內功，實力早已超越檢定框架。我們教給孩子的是一輩子帶不走的語言能力。"</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section: Curriculum Overview (NEW - Replaced AI Analysis) -->
     <section id="curriculum" class="py-16 bg-stone-50 border-y border-stone-200">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="bg-sky-100 text-sky-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-3 inline-block">Curriculum Overview</span>
                 <h2 class="text-3xl font-bold text-stone-800 mb-4">耶加 I.E.E. 課程一覽表</h2>
-                <p class="text-stone-600 max-w-2xl mx-auto">我們針對不同年齡與實力階段，提供最精準的培訓方案，將耶加五大核心內功轉化為國際認可的卓越指標。</p>
             </div>
-
             <div class="table-container bg-white rounded-3xl shadow-sm border border-stone-200 overflow-hidden">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="bg-stone-800 text-white">
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">班級名稱</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">適合級數</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">劍橋檢定對標</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">實力對標指標</th>
-                            <th class="p-6 text-sm font-bold uppercase tracking-wider">教育核心目標</th>
+                            <th class="p-6 text-sm font-bold uppercase">班級名稱</th>
+                            <th class="p-6 text-sm font-bold uppercase">對標檢定</th>
+                            <th class="p-6 text-sm font-bold uppercase">核心目標</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-stone-100">
-                        <!-- Class 1 -->
-                        <tr class="hover:bg-stone-50 transition">
-                            <td class="p-6">
-                                <span class="block font-bold text-lg text-sky-700">I.E.E. 英檢實力班</span>
-                            </td>
-                            <td class="p-6">
-                                <span class="inline-block bg-stone-100 text-stone-600 px-3 py-1 rounded-full text-xs font-bold">A / P / L</span>
-                            </td>
-                            <td class="p-6">
-                                <p class="text-stone-800 font-medium">YLE 兒童英檢</p>
-                                <p class="text-xs text-stone-500">(Starters / Movers / Flyers)</p>
-                            </td>
-                            <td class="p-6">
-                                <ul class="text-sm text-stone-600 space-y-1">
-                                    <li>• 累積 600-1000+ 詞彙量</li>
-                                    <li>• 紮實自然發音技術</li>
-                                    <li>• 對標國中英語基礎</li>
-                                </ul>
-                            </td>
-                            <td class="p-6">
-                                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                                    <p class="text-xs font-bold text-green-700 mb-1">【素養實證與自信建立】</p>
-                                    <p class="text-sm text-stone-600 leading-relaxed">將五大內功轉化為公信力指標，建立應試心理韌性。</p>
-                                </div>
-                            </td>
+                        <tr>
+                            <td class="p-6 font-bold text-sky-700">I.E.E. 英檢實力班 (A/P/L)</td>
+                            <td class="p-6 text-stone-600">YLE 兒童英檢 (Starters/Movers/Flyers)</td>
+                            <td class="p-6 text-sm text-stone-600">建立應試心理韌性，將五大內功轉化為公信力指標。</td>
                         </tr>
-                        <!-- Class 2 -->
-                        <tr class="hover:bg-stone-50 transition">
-                            <td class="p-6">
-                                <span class="block font-bold text-lg text-amber-600">I.E.E. 英檢衝刺班</span>
-                            </td>
-                            <td class="p-6">
-                                <span class="inline-block bg-stone-100 text-stone-600 px-3 py-1 rounded-full text-xs font-bold">U / S / J</span>
-                            </td>
-                            <td class="p-6">
-                                <p class="text-stone-800 font-medium">KET / PET 通用英檢</p>
-                                <p class="text-xs text-stone-500">(A2 Key / B1 Preliminary)</p>
-                            </td>
-                            <td class="p-6">
-                                <ul class="text-sm text-stone-600 space-y-1">
-                                    <li>• 具備成人中級實力</li>
-                                    <li>• 時態與語法運用自如</li>
-                                    <li>• 流暢跨領域閱讀理解</li>
-                                </ul>
-                            </td>
-                            <td class="p-6">
-                                <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
-                                    <p class="text-xs font-bold text-amber-700 mb-1">【卓越跨越與學術接軌】</p>
-                                    <p class="text-sm text-stone-600 leading-relaxed">對標私中與雙語班入學競爭力，佈局國際人才視野。</p>
-                                </div>
-                            </td>
+                        <tr>
+                            <td class="p-6 font-bold text-amber-600">I.E.E. 英檢衝刺班 (U/S/J)</td>
+                            <td class="p-6 text-stone-600">KET / PET 通用英檢</td>
+                            <td class="p-6 text-sm text-stone-600">對標私中與雙語班入學競爭力，佈局國際人才視野。</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="mt-8 text-center">
-                <p class="text-stone-400 text-sm">※ 所有課程皆採預約推薦制，確保孩子在最適合的環境中成長。</p>
-            </div>
         </div>
     </section>
 
-    <!-- Section 2: Roadmap -->
     <section id="roadmap" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-2xl font-bold text-stone-800 mb-10 text-center">級數地圖：耶加與劍橋檢定精準對接</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-                <button onclick="setRoadmap(0)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-green-500 shadow-sm text-left group">
-                    <span class="exam-tag mb-2 inline-block">對接 YLE Starters/Movers</span>
-                    <h3 class="font-bold text-lg group-hover:text-green-600">A / P 級</h3>
-                    <p class="text-xs text-stone-500 mt-1">語言直覺奠定期</p>
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-stone-800 mb-10">級數地圖：耶加與劍橋檢定精準對接</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <button onclick="setRoadmap(0)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-green-500 shadow-sm text-left hover:bg-green-50 transition">
+                    <span class="exam-tag mb-2 inline-block">YLE Starters</span>
+                    <h3 class="font-bold text-lg">A / P 級</h3>
                 </button>
-                <button onclick="setRoadmap(1)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-blue-500 shadow-sm text-left group">
-                    <span class="exam-tag mb-2 inline-block">對接 YLE Flyers</span>
-                    <h3 class="font-bold text-lg group-hover:text-blue-600">L 級</h3>
-                    <p class="text-xs text-stone-500 mt-1">邏輯轉換與敘事力</p>
+                <button onclick="setRoadmap(1)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-blue-500 shadow-sm text-left hover:bg-blue-50 transition">
+                    <span class="exam-tag mb-2 inline-block">YLE Flyers</span>
+                    <h3 class="font-bold text-lg">L 級</h3>
                 </button>
-                <button onclick="setRoadmap(2)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-sky-500 shadow-sm text-left group">
-                    <span class="exam-tag mb-2 inline-block">對接 KET (A2)</span>
-                    <h3 class="font-bold text-lg group-hover:text-sky-600">U / S 級</h3>
-                    <p class="text-xs text-stone-500 mt-1">學術跨越與社交邏輯</p>
+                <button onclick="setRoadmap(2)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-sky-500 shadow-sm text-left hover:bg-sky-50 transition">
+                    <span class="exam-tag mb-2 inline-block">KET (A2)</span>
+                    <h3 class="font-bold text-lg">U / S 級</h3>
                 </button>
-                <button onclick="setRoadmap(3)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-amber-500 shadow-sm text-left group">
-                    <span class="exam-tag mb-2 inline-block">對接 PET (B1)</span>
-                    <h3 class="font-bold text-lg group-hover:text-amber-600">J 級</h3>
-                    <p class="text-xs text-stone-500 mt-1">領袖視野與思辨力</p>
+                <button onclick="setRoadmap(3)" class="bg-stone-50 p-6 rounded-xl border-l-4 border-amber-500 shadow-sm text-left hover:bg-amber-50 transition">
+                    <span class="exam-tag mb-2 inline-block">PET (B1)</span>
+                    <h3 class="font-bold text-lg">J 級</h3>
                 </button>
             </div>
-            <div id="roadmap-content" class="bg-stone-50 rounded-2xl p-8 border border-stone-100 min-h-[150px] animate-fade-in"></div>
+            <div id="roadmap-content" class="bg-stone-50 rounded-2xl p-8 border border-stone-100 min-h-[150px] animate-fade-in text-left">
+                </div>
         </div>
     </section>
 
-    <!-- Section 3: Data Dashboard -->
     <section id="data" class="py-16 bg-stone-50 border-t border-stone-200">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-2xl font-bold text-stone-800 mb-12 text-center">對比實證：耶加級數的領先幅度</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold mb-4">詞彙量對稱：耶加 vs. 劍橋官方標準</h3>
+                    <h3 class="font-bold mb-4">詞彙量對稱：耶加 vs. 官方標準</h3>
                     <div class="chart-container"><canvas id="vocabChart"></canvas></div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="font-bold mb-4">核心能力覆蓋率 (YLE/KET/PET)</h3>
+                    <h3 class="font-bold mb-4">核心能力覆蓋率</h3>
                     <div class="chart-container"><canvas id="radarChart"></canvas></div>
-                    <div class="mt-4 flex gap-2 justify-center text-xs">
+                    <div class="mt-4 flex flex-wrap gap-2 justify-center text-xs">
                         <button onclick="updateRadar('yle')" class="px-3 py-1 bg-green-100 rounded-full">YLE 階段</button>
                         <button onclick="updateRadar('ket')" class="px-3 py-1 bg-sky-100 rounded-full">KET 階段</button>
                         <button onclick="updateRadar('pet')" class="px-3 py-1 bg-amber-100 rounded-full">PET 階段</button>
@@ -285,81 +208,12 @@
         </div>
     </section>
 
-    <!-- Placement Wizard -->
-    <section id="wizard" class="py-16 bg-stone-800 text-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4">精準實力對接分析小幫手</h2>
-                <p class="text-stone-400 mb-8">選擇目前年級，立即獲得「耶加級數」與「劍橋檢定目標」的對接建議。</p>
-                <select id="grade-select" onchange="runWizard()" class="w-full max-w-md bg-stone-700 text-white border-stone-600 rounded-xl px-4 py-3 outline-none">
-                    <option value="">選擇孩子的目前年級</option>
-                    <option value="1">小一 ~ 小二</option>
-                    <option value="3">小三 ~ 小四</option>
-                    <option value="5">小五 ~ 小六</option>
-                    <option value="7">國中階段</option>
-                </select>
-            </div>
-            <div id="wizard-result" class="hidden animate-fade-in bg-stone-700 p-8 rounded-2xl border border-stone-600">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-stone-800 p-6 rounded-xl border border-stone-600">
-                        <h4 class="text-xs font-bold text-stone-400 mb-1 uppercase">建議耶加級數</h4>
-                        <p id="res-level" class="text-2xl font-bold text-sky-400"></p>
-                    </div>
-                    <div class="bg-stone-800 p-6 rounded-xl border border-stone-600">
-                        <h4 class="text-xs font-bold text-stone-400 mb-1 uppercase">劍橋對接目標</h4>
-                        <p id="res-exam" class="text-2xl font-bold text-amber-400"></p>
-                    </div>
-                </div>
-                <div class="mt-6 p-4 bg-stone-600 rounded-xl">
-                    <h4 class="font-bold mb-2">🎓 級數對接競爭力分析：</h4>
-                    <p id="res-comp" class="text-stone-200 italic"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Section -->
     <section id="register" class="py-16 bg-white border-t border-stone-200">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-stone-800 mb-2">報名流程：【預約推薦制】</h2>
-                <p class="text-amber-600 font-bold tracking-widest uppercase text-sm">『I.E.E. 國際英檢班』將全面採行【預約推薦制】</p>
-                <div class="h-1 w-20 bg-sky-600 mx-auto mt-4"></div>
-                <h3 class="text-xl font-bold text-stone-700 mt-6">【流程三步驟：看見孩子的真實落點】</h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- Step 1 -->
-                <div class="card-hover bg-stone-50 p-8 rounded-2xl text-center border border-stone-100">
-                    <div class="step-number">1</div>
-                    <h4 class="font-bold text-xl text-stone-800 mb-4">專業診斷</h4>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        耶加 I.E.E. 教學團隊將於英語班級進行<br>
-                        <strong class="text-sky-700">『YLE 實力分流診斷卷』</strong><br>
-                        進行統一施測。
-                    </p>
-                </div>
-                <!-- Step 2 -->
-                <div class="card-hover bg-stone-50 p-8 rounded-2xl text-center border border-stone-100">
-                    <div class="step-number">2</div>
-                    <h4 class="font-bold text-xl text-stone-800 mb-4">個殊推薦</h4>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        英語老師將依據診斷結果，並結合孩子平時在 <strong class="text-sky-700">I.E.E. 系統的學習紀錄</strong>進行評估。
-                    </p>
-                </div>
-                <!-- Step 3 -->
-                <div class="card-hover bg-stone-50 p-8 rounded-2xl text-center border border-stone-100">
-                    <div class="step-number">3</div>
-                    <h4 class="font-bold text-xl text-stone-800 mb-4">班級安排</h4>
-                    <p class="text-stone-600 text-sm leading-relaxed">
-                        由英語老師親自建議最適合孩子當前實力的級數與班別，<strong class="text-sky-700">確保學習能量精準發揮</strong>，達成成效最大化。
-                    </p>
-                </div>
-            </div>
-
-            <div class="bg-sky-50 rounded-3xl p-10 text-center border border-sky-100 max-w-3xl mx-auto shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-stone-800 mb-8">報名流程：【預約推薦制】</h2>
+            <div class="bg-sky-50 rounded-3xl p-10 border border-sky-100 shadow-sm">
                 <h3 class="text-2xl font-bold text-sky-900 mb-6">我想為孩子報名『I.E.E. 國際英檢班』</h3>
-                <p class="text-sky-700 mb-8">立即填寫報名意願表單，讓專業團隊引導孩子接軌國際標準！</p>
+                <p class="text-sky-700 mb-8">立即填寫報名意願表單，由專業團隊引導孩子接軌國際標準！</p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrFtTsCCLtOcMoMbIi73Up2GDStRrfiJbTcgjohjidUnO2TA/viewform?usp=publish-editor" target="_blank" class="inline-block px-10 py-4 bg-sky-600 text-white font-bold text-lg rounded-full hover:bg-sky-700 transition transform hover:scale-105 shadow-xl">
                     點擊此處填寫報名表單
                 </a>
@@ -367,17 +221,16 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-white border-t py-8 text-center text-stone-500 text-sm">
         <p>&copy; 2024 耶加 I.E.E. 國際英檢班. All rights reserved.</p>
         <p class="mt-2 font-bold text-sky-700">讓實力變成「看得見」的國際證照</p>
     </footer>
 
     <script>
-        // --- Standard Logic & Roadmap ---
+        // Philosophy Logic
         const philosophyData = {
-            internal: { title: "級數內功 = 實力深耕", desc: "耶加 A-J 級數不僅僅是級數，而是涵蓋了文法、口說、閱讀等全方位的『語言實力』。這種實力是永久性的，而非短期衝刺後的遺忘。", icon: "🧠" },
-            external: { title: "國際證照 = 金牌駕照", desc: "英檢是耶加級數實力達標後的『成果展示』。我們透過級數對接解析，讓孩子用最精準的路徑，拿下屬於他們的國際認證。", icon: "🥇" }
+            internal: { title: "級數內功 = 實力深耕", desc: "耶加 A-J 級數涵蓋了文法、口說、閱讀等全方位的語言實力。這種實力是永久性的。", icon: "🧠" },
+            external: { title: "國際證照 = 金牌駕照", desc: "英檢是實力達標後的成果展示。我們讓孩子用最精準的路徑拿證。", icon: "🥇" }
         };
 
         function updatePhilosophy(type) {
@@ -385,23 +238,25 @@
             document.getElementById('philo-title').innerText = data.title;
             document.getElementById('philo-desc').innerText = data.desc;
             document.getElementById('philo-icon').innerText = data.icon;
+            
             const btnInt = document.getElementById('btn-internal');
             const btnExt = document.getElementById('btn-external');
             if(type === 'internal') {
-                btnInt.className = "flex-1 py-2 rounded-xl text-sm font-bold bg-white shadow-sm text-sky-600";
-                btnExt.className = "flex-1 py-2 rounded-xl text-sm font-bold text-stone-600";
+                btnInt.classList.add('bg-white', 'shadow-sm', 'text-sky-600');
+                btnExt.classList.remove('bg-white', 'shadow-sm', 'text-amber-600');
             } else {
-                btnExt.className = "flex-1 py-2 rounded-xl text-sm font-bold bg-white shadow-sm text-amber-600";
-                btnInt.className = "flex-1 py-2 rounded-xl text-sm font-bold text-stone-600";
+                btnExt.classList.add('bg-white', 'shadow-sm', 'text-amber-600');
+                btnInt.classList.remove('bg-white', 'shadow-sm', 'text-sky-600');
             }
         }
         updatePhilosophy('internal');
 
+        // Roadmap Logic
         const roadmapSteps = [
-            { title: "耶加 A / P 級：對接 YLE Starters / Movers", value: "累積 600-1000 詞彙量。重點：看到就會讀、聽到就能拼。目標是劍橋兒童英檢初階滿盾，建立強大的語言直覺。" },
-            { title: "耶加 L 級：對接 YLE Flyers", value: "具備國中基礎實力。精準運用時態進行完整敘事。Flyers 滿盾是孩子在國小階段展現頂尖英語力的重要里程碑。" },
-            { title: "耶加 U / S 級：對接 KET (A2 Key)", value: "學術跨越期。掌握國際社交與閱讀邏輯，對標高雄私中與國中雙語班入學競爭力。" },
-            { title: "耶加 J 級：對接 PET (B1 Preliminary)", value: "精英攻頂期。接軌成人英檢中級實力，具備英語思辨力與深度領袖視野，佈局全球競爭力。" }
+            { title: "耶加 A / P 級：對接 YLE Starters / Movers", value: "累積 600-1000 詞彙量。重點：看到就會讀、聽到就能拼。" },
+            { title: "耶加 L 級：對接 YLE Flyers", value: "具備國中基礎實力。精準運用時態進行完整敘事。" },
+            { title: "耶加 U / S 級：對接 KET (A2 Key)", value: "學術跨越期。掌握國際社交與閱讀邏輯。" },
+            { title: "耶加 J 級：對接 PET (B1 Preliminary)", value: "精英攻頂期。接軌成人英檢中級實力，具備英語思辨力。" }
         ];
         function setRoadmap(i) {
             document.getElementById('roadmap-content').innerHTML = `
@@ -413,55 +268,37 @@
         }
         setRoadmap(0);
 
-        function runWizard() {
-            const grade = document.getElementById('grade-select').value;
-            const res = document.getElementById('wizard-result');
-            const levels = {
-                '1': ['A / P 級', 'YLE Starters / Movers', '語言直覺：建立看到就會讀、聽到就能拼的反射動作，奠定扎實單字量。'],
-                '3': ['L 級', 'YLE Flyers (國小英檢頂標)', '邏輯轉換：能靈活運用時態進行完整故事敘述，為國中英文優勢佈局。'],
-                '5': ['U / S 級', 'KET (A2) / 海外遊學', '學術跨越：掌握國際社交邏輯，準備迎接私中入學考的學術難度。'],
-                '7': ['J 級', 'PET (B1) / 成人中級', '領袖視野：具備英語思辨力與深度閱讀力，接軌國中高階雙語課程。']
-            };
-            if(grade) {
-                document.getElementById('res-level').innerText = levels[grade][0];
-                document.getElementById('res-exam').innerText = levels[grade][1];
-                document.getElementById('res-comp').innerText = levels[grade][2];
-                res.classList.remove('hidden');
-            }
-        }
-
+        // Charts Initialization
         window.onload = function() {
             new Chart(document.getElementById('vocabChart'), {
                 type: 'bar',
                 data: { 
-                    labels: ['YLE 標準', '耶加 A-P 級學生', 'KET 標準', '耶加 U-S 級學生'], 
+                    labels: ['YLE 標準', '耶加 A-P', 'KET 標準', '耶加 U-S'], 
                     datasets: [{ 
                         data: [400, 950, 1500, 2200], 
-                        backgroundColor: ['#d6d3d1', '#0284c7', '#d6d3d1', '#f59e0b'], 
+                        backgroundColor: ['#d6d3d1', '#0284c7', '#d6d3d1', '#f59e0b'],
                         borderRadius: 6 
                     }] 
                 },
                 options: { 
                     responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { 
-                        legend: { display: false }
-                    } 
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } } 
                 }
             });
 
             window.radar = new Chart(document.getElementById('radarChart'), {
                 type: 'radar',
                 data: { 
-                    labels: ['聽力對接', '口說勇氣', '閱讀邏輯', '寫作架構', '應試心理'], 
+                    labels: ['聽力', '口說', '閱讀', '寫作', '應試'], 
                     datasets: [{ 
                         label: '能力覆蓋率',
-                        data: [85, 90, 60, 50, 70], 
+                        data: [85, 90, 80, 70, 85], 
                         backgroundColor: 'rgba(2, 132, 199, 0.2)', 
                         borderColor: '#0284c7' 
                     }] 
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                options: { responsive: true, maintainAspectRatio: false }
             });
         };
 
